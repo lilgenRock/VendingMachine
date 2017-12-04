@@ -12,41 +12,39 @@ namespace VendingMachine
         {
             MachineOperations vm = new MachineOperations();
             string input = "";
+            Item[] items = new Item[0];
+            items = vm.FillMachineWithProducts();
 
-            while (!input.Equals("9"))
-            {        // exit loop if 9(Money return) is selected
+            while (!input.Equals("9"))             // Exit loop if 9(Money return) is selected
+            {        
                 vm.PrintMenu();
                 input = vm.GetInputFromConsole();
-                if (input.Equals("1"))               // Input money
+                if (input.Equals("1"))             // Input money
                 {
-                    //     vm.inputMoney();
+                    vm.InputMoney();
                 }
-                else if (input.Equals("2"))        // List all items
+                else if (input.Equals("2"))        // List all items in vending machine
                 {
-                    //     vm.printItemList(items);
+                    vm.PrintItemList(items);
                 }
                 else if (input.Equals("3"))        // Examine item
                 {
-                    //     vm.testItem(items);
+                    vm.TestItem(items);
                 }
                 else if (input.Equals("4"))        // Buy item
                 {
-                    //     vm.buyItem(items);
+                    vm.BuyItem(items);
                 }
                 else if (input.Equals("5"))        // Use item
                 {
-                    //     vm.useItem(items);
+                    vm.UseItem(items);
                 }
-                else
+                else if(!input.Equals("9"))        // Input error
                 {
                     Console.WriteLine("Invalid input. Please try again.");
                 }
-
             }
-
-
-
-
+            vm.ExitHandler();
         }
     }
 }

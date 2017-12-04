@@ -8,15 +8,13 @@ namespace VendingMachine
 {
     public abstract class Item
     {
-        string name;
-        int price;
-        int selection;
-        string info;
+        public string Name { get; set; }
+        public int Price { get; set; }
+        public int Selection { get; set; }
+        public string Info { get; set; }
 
-        public abstract void Purchase();
+        public abstract int Purchase(int moneyPool);
         public abstract void Examine();
         public abstract void Use();
-
-
     }
 }
