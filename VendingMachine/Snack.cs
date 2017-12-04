@@ -8,18 +8,19 @@ namespace VendingMachine
 {
     class Snack : Item
     {
-        override
-        public void Purchase()
+
+        public override void Purchase()
+        {
+
+
+        }
+
+        public override void Examine()
         {
 
         }
-        override
-        public void Examine()
-        {
 
-        }
-        override
-        public void Use()
+        public override void Use()
         {
 
         }
