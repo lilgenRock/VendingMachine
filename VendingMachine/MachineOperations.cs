@@ -26,6 +26,8 @@ namespace VendingMachine
 
         public string GetInputFromConsole()
         {
+
+
             return Console.ReadLine();
         }
 
